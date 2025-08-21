@@ -4,19 +4,31 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix6.configs.TalonFXConfigurator;
+import com.ctre.phoenix6.hardware.TalonFX;
+
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ExampleSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
-  
-  public ExampleSubsystem() {}
+  private final TalonFX examplemotor = new TalonFX(0);
+  boolean enabled = true;
+  private final TalonFXConfigurator example;
+
+  public ExampleSubsystem() {
+
+  }
 
   /**
    * Example command factory method.
    *
    * @return a command
    */
+  //methods
+  public void setEnabled() {
+    
+  }
   public Command exampleMethodCommand() {
     // Inline construction of command goes here.
     // Subsystem::RunOnce implicitly requires `this` subsystem.
