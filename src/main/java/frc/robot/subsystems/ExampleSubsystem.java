@@ -10,14 +10,14 @@ import com.ctre.phoenix6.hardware.TalonFX;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class ExampleSubsystem extends SubsystemBase {
+public class ExampleSubsystem extends SubsystemBase implements Reportable{
   /** Creates a new ExampleSubsystem. */
   private final TalonFX examplemotor = new TalonFX(0);
   boolean enabled = true;
   private final TalonFXConfigurator example;
 
   public ExampleSubsystem() {
-
+    
   }
 
   /**
@@ -27,7 +27,7 @@ public class ExampleSubsystem extends SubsystemBase {
    */
   //methods
   public void setEnabled() {
-    
+
   }
   public Command exampleMethodCommand() {
     // Inline construction of command goes here.
@@ -57,4 +57,28 @@ public class ExampleSubsystem extends SubsystemBase {
   public void simulationPeriodic() {
     // This method will be called once per scheduler run during simulation
   }
+
+  @Override
+  public void reportToSmartDashboard(LOG_LEVEL priority) {
+    switch (priority) {
+      case OFF:
+        break;
+      case ALL:
+
+      case MEDIUM:
+
+      case MINIMAL:
+
+    }
 }
+
+  @Override
+  public void initShuffleboard(LOG_LEVEL priority) {
+
+}
+
+}
+
+
+
+
